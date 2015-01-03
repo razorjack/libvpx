@@ -20,7 +20,6 @@ creates_libvpx = "#{node['libvpx']['prefix']}/bin/vpxenc"
 
 file creates_libvpx do
   action :nothing
-  subscribes :delete, 'bash[compile_yasm]', :immediately
 end
 
 git "#{Chef::Config[:file_cache_path]}/libvpx" do
